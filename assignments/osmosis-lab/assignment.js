@@ -9,9 +9,13 @@
   Part 1 is the Amoeba Sisters video "Osmosis and Water Potential (Updated)" with questions inside it. The video is cut
   to 0:00-7:16. The water potential section after that (pressure potential, potato cores, turgor pressure) is left out
   because this lab does not use it. Captions come from the teacher's pasted transcript (source/osmosis-amoeba-sisters.vtt).
-  PLACEHOLDERS: the teacher's own lab video (Part 3, watched before the experiment starts) and the video for the
-  24-hour check (Part 4) are not here yet. When the lab video comes, add it as video: { ..., afterPart: 2 } and
-  take out the "coming soon" lines in Parts 3 and 4.
+  Part 3 has the teacher's own lab setup video (clip "setup", whole: true) with questions inside it. Its captions were
+  made from the teacher's pasted transcript (source/osmosis-lab-setup.vtt), with times spread between her time stamps.
+  Amounts the teacher set for everyone: about 1 cup of water per cup, 3 tablespoons of salt, and 3 tablespoons of sugar
+  (the video shows larger amounts; the reading tells students to use these). Her gummy bears started at 15 mm; students
+  measure their own before the experiment and again after 24 hours.
+  PLACEHOLDER: the video for the 24-hour check (Part 4) is not here yet. When it comes, add it to Part 4 as a whole
+  clip like "setup", and take out the "coming soon" line in Part 4.
   Sources (in source/, not saved to GitHub): Osmosis_Lab.pdf (the classroom handout, "Orbeez or Gummy Bears"),
   the Amoeba Sisters video, and an osmosis rap video that is not used yet.
   Write *scientific names* between asterisks to show them in italics. Reading boxes and tables use HTML.
@@ -22,7 +26,7 @@ var KIT = '<p><b>No lab kit?</b> If you did not get your lab kit, or something i
 window.ASSIGNMENT = {
   title: 'Osmosis Lab',
   course: 'Biology A',
-  storageKey: 'osmosis-lab-v2',
+  storageKey: 'osmosis-lab-v3',
   /* supported version (?support=eagle): the goal box at the top */
   essential: {
     question: 'How does water move by osmosis, and what happens to a gummy bear in plain water, salt water, and sugar water?',
@@ -43,10 +47,10 @@ window.ASSIGNMENT = {
     + '<circle cx="26" cy="20" r="2.2" fill="var(--primary-ink)"/><circle cx="38" cy="20" r="2.2" fill="var(--primary-ink)"/>'
     + '<ellipse cx="32" cy="27" rx="4" ry="3" fill="var(--primary-ink)"/></svg>',
 
-  /* No full video at the top yet. The teacher's lab video will go here (afterPart: 2) when it is ready. */
+  /* No full video at the top. Each lab video sits in its own part as a whole clip. */
   start: {
     heading: 'How this lab works',
-    intro: 'In this lab you will use gummy bears to see osmosis in action. Part 1: watch an Amoeba Sisters video about osmosis and answer the questions that pop up in it. Part 2: use an interactive diagram to see what happens to a cell in hypotonic, isotonic, and hypertonic solutions. Part 3: set up your gummy bear experiment in plain water, salt water, and sugar water, and write your hypothesis. You will need some sugar or syrup from home. Part 4: come back about 24 hours later, measure your gummy bears again, and explain your results.',
+    intro: 'In this lab you will use gummy bears to see osmosis in action. Part 1: watch an Amoeba Sisters video about osmosis and answer the questions that pop up in it. Part 2: use an interactive diagram to see what happens to a cell in hypotonic, isotonic, and hypertonic solutions. Part 3: watch the lab setup video, set up your gummy bear experiment in plain water, salt water, and sugar water, write your hypothesis, and measure your gummy bears before they go in the water. You will need some sugar or syrup from home. Part 4: come back about 24 hours later, measure each gummy bear again, and explain your results.',
     after: 'No lab kit? If you did not get your lab kit, or something is missing from it, let your teacher of record (TOR) know right away so they can get a kit to you. You still do this lab: watch all of the videos, and anywhere you are asked for a photo, add a screenshot of one of the pictures from the videos instead.'
   },
 
@@ -57,7 +61,10 @@ window.ASSIGNMENT = {
     tonic:  { support: false, src: 'media/clip-tonic.mp4', from: 215.0, to: 337.0, seconds: 122, title: 'Hypertonic, hypotonic, and isotonic, and the IV example',
               of: 'Osmosis and Water Potential (Updated)' },
     fish:   { support: false, src: 'media/clip-fish.mp4', from: 337.0, to: 414.0, seconds: 77, title: 'A saltwater fish in a freshwater tank',
-              of: 'Osmosis and Water Potential (Updated)' }
+              of: 'Osmosis and Water Potential (Updated)' },
+    /* Part 3: the teacher's lab setup video */
+    setup:  { src: 'media/osmosis-lab-setup.mp4', from: 0, to: 241.9, seconds: 242, title: 'Osmosis Lab Setup',
+              of: 'Osmosis Lab Setup', whole: true }
   },
 
   parts: [
@@ -195,37 +202,78 @@ window.ASSIGNMENT = {
     {
       title: 'Set up your lab and make a hypothesis',
       gate: true,                 // Part 4 and the Finish section stay hidden until everything here is done
-      intro: 'Do this part when you are ready to start your experiment. You will set up your cups, make a hypothesis, measure your gummy bears, and put them in the water. Part 4 opens when you finish this part.',
+      intro: 'Do this part when you are ready to start your experiment. First, watch your teacher set up the lab. The video stops on its own 4 times and a question pops up. Then you will set up your cups, make a hypothesis, measure your gummy bears, and put them in the water. Part 4 opens when you finish this part.',
+      easyIntro: 'Do this part when you are ready to start your experiment. First, watch your teacher set up the lab. The video stops on its own 2 times and a question pops up. Then you will set up your cups, make a hypothesis, measure your gummy bears, and put them in the water. Part 4 opens when you finish this part.',
+      clips: ['setup'],
       read: KIT
-        + '<p><b>Watch the lab video first.</b> <i>Coming soon: your teacher will add the lab video here. Watch the whole video before you start your experiment.</i> You may hear about Orbeez in the video. This lab uses only gummy bears, so skip anything about Orbeez.</p>'
+        + '<p><b>Use these amounts.</b> In the video, your teacher uses about a cup and a half of water and about a quarter cup of salt and sugar. For your lab, use <b>about 1 cup of water</b> in each cup, <b>3 tablespoons of salt</b>, and <b>3 tablespoons of sugar</b>. That way everyone’s lab is the same, and the salt and sugar amounts match.</p>'
         + '<p><b>Purpose:</b> Find out how water moves across a semipermeable barrier by watching how gummy bears change size in plain water, salt water, and sugar water.</p>'
         + '<p><b>Check your kit.</b> You need:</p><ul>'
-        + '<li>3 gummy bears (if your kit has more, you only need 3)</li><li>3 clear cups</li><li>Water and table salt</li><li>A ruler with millimeters (mm)</li><li>A marker</li><li>Paper towels and a spoon</li></ul>'
-        + '<p><b>Sugar from home:</b> You will need some sugar from your own house. It is not in the kit. You can use any kind of sugar you have, such as white sugar or brown sugar. It can also be a syrup, such as pancake syrup, maple syrup, corn syrup, or honey.</p>'
-        + '<p><b>Make your solutions.</b> Label the cups A, B, and C with the marker. Put 1 cup (240 mL) of room-temperature water in each cup. Add what the table below says, and stir until it dissolves. These amounts are close enough for this lab.</p>'
+        + '<li>3 gummy bears (if your kit has more, you only need 3)</li><li>3 clear cups</li><li>Water and table salt</li><li>A measuring tape or ruler with centimeters (cm) and millimeters (mm)</li><li>A tablespoon to measure with</li><li>A marker</li><li>Paper towels and a spoon</li></ul>'
+        + '<p><b>Sugar from home:</b> You will need some sugar from your own house. It is not in the kit. You can use any kind of sugar you have, such as white sugar or brown sugar. It can also be a syrup, such as pancake syrup, maple syrup, corn syrup, simple syrup, a coffee syrup, or honey. Sugar packets work too (about 9 packets make 3 tablespoons). Use 3 tablespoons of whatever you choose, the same as the salt. No sugar or syrup at all? Fill cup C with about 1 cup of regular soda instead of water. It must be regular soda, because diet soda has no sugar.</p>'
+        + '<p><b>Make your solutions.</b> Label the cups A, B, and C with the marker. Put about 1 cup of room-temperature water in each cup. Add what the table below says, and stir until it dissolves. It may take a minute. Salt water may look cloudy, and some sugar makes the water a little yellow. That is okay.</p>'
+        + '<p><b>How to measure a gummy bear:</b> Use the centimeter side of your measuring tape (the side where the numbers are close together), not the inch side. Put the top of the gummy bear’s head at the 0 and read the line at the bottom of its feet. Each small line is 1 millimeter (mm), and there are 10 of them from 0 to 1 centimeter. So a bear that reaches halfway between the 1 and the 2 is 15 mm. Your teacher’s gummy bears started at 15 mm. Yours may be a different size, so measure your own.</p>'
         + '<p><b>Do it:</b> Follow these steps in order.</p><ol>'
         + '<li>Label your cups and make your three solutions.</li>'
         + '<li>Write your hypothesis below, before anything goes in the water.</li>'
-        + '<li>Measure each gummy bear from the top of its head to the bottom of its feet, in millimeters. Write down which bear goes in which cup. Use the gummy bears straight from the bag.</li>'
-        + '<li>Put one gummy bear in each cup. Write down the date and time.</li>'
+        + '<li>Before the experiment starts, measure each gummy bear from the top of its head to the bottom of its feet, in millimeters. Write down which bear goes in which cup. Use the gummy bears straight from the bag.</li>'
+        + '<li>Put one gummy bear in each cup. (In the video, your teacher puts 2 in each cup so she has extras to check. You only need 1.) Write down the date and time.</li>'
         + '<li>Take a photo of your three cups with a gummy bear in each one.</li>'
         + '<li>Leave the cups somewhere safe for about 24 hours. Then come back for Part 4.</li></ol>'
         + '<p><b>Stay safe:</b> Do not eat the gummy bears or drink the solutions. Clean up any spills, and wash your hands when you finish.</p>',
-      tableHtml: '<table><caption>What goes in each cup (per 1 cup, or 240 mL, of water)</caption>'
+      tableHtml: '<table><caption>What goes in each cup (about 1 cup of water in each)</caption>'
         + '<thead><tr><th scope="col">Cup</th><th scope="col">Solution</th><th scope="col">What to add</th></tr></thead><tbody>'
         + '<tr><td>A</td><td>Plain water</td><td>Nothing</td></tr>'
-        + '<tr><td>B</td><td>Salt water</td><td>2 teaspoons of salt</td></tr>'
-        + '<tr><td>C</td><td>Sugar water</td><td>4 tablespoons (¼ cup) of sugar, or 4 tablespoons of syrup</td></tr></tbody></table>',
+        + '<tr><td>B</td><td>Salt water</td><td>3 tablespoons of salt</td></tr>'
+        + '<tr><td>C</td><td>Sugar water</td><td>3 tablespoons of sugar, or 3 tablespoons of syrup</td></tr></tbody></table>',
       questions: [
+        {
+          at: 78,
+          type: 'choice',
+          text: 'Which side of the measuring tape should you use to measure your gummy bears?',
+          easy: 'Which side of the measuring tape should you use?',
+          options: ['The centimeter side, where the numbers are close together', 'The inch side, where the numbers are further apart', 'Either side, because they are the same', 'Neither side. Just guess the size.'], answer: 0,
+          explain: 'Right. In scientific activities, you use the centimeter side. Its numbers are close together, and it is marked in millimeters, too.',
+          tip: 'Rewind to about 0:55. Listen for which side you use “in scientific activities.”'
+        },
+        {
+          at: 145,
+          type: 'typed',
+          support: false,
+          text: 'Fill in the blank: On the centimeter side, there are 10 small lines between the 0 and the 1. Each of those small lines is one _____.',
+          easy: 'Fill in the blank: Each small line between the 0 and the 1 is one _____.',
+          accept: ['millimeter', 'millimeters', 'millimetre', 'millimetres', 'mm'],
+          tip: 'Rewind to about 2:04. Listen for what your teacher calls “each one of those lines.”',
+          aria: 'The missing word'
+        },
+        {
+          at: 154,
+          type: 'choice',
+          text: 'Your teacher’s gummy bears started at 15 millimeters. What should you do with your gummy bears?',
+          easy: 'Your teacher’s gummy bears were 15 mm. What should you do?',
+          options: ['Measure my own gummy bears before they go in the water, because mine may be a different size', 'Write down 15 mm, because every gummy bear is the same size', 'Skip the first measurement and only measure after 24 hours', 'Measure them after they go in the water'], answer: 0,
+          explain: 'Right. Your gummy bears may be bigger or smaller than your teacher’s. Measure each one before the experiment starts, and again after 24 hours, so you can see how much it changed.',
+          tip: 'Rewind to about 2:24. Your teacher says yours “might be different.” How would you know your starting size?'
+        },
+        {
+          at: 218,
+          type: 'choice',
+          support: false,
+          text: 'Why does your teacher say to use the same amount of sugar as salt?',
+          easy: 'Why use the same amount of sugar and salt?',
+          options: ['To keep things constant in the experiment', 'So the gummy bears taste better', 'Because sugar and salt are the same thing', 'So the water turns cloudy'], answer: 0,
+          explain: 'Right. Keeping the amounts the same keeps things constant, so it is a fair test. For your lab, everyone uses 3 tablespoons of each.',
+          tip: 'Rewind to about 3:19 and listen to the end of what your teacher says about sugar.'
+        },
         {
           type: 'selects',
           text: 'What goes in each cup? Use the table.',
-          options: ['Nothing', '2 teaspoons of salt', '4 tablespoons of sugar or syrup'],
+          options: ['Nothing', '3 tablespoons of salt', '3 tablespoons of sugar or syrup'],
           hint: 'Find the cup’s row in the table, and read across to the “What to add” column.',
           items: [
             { label: 'Cup A (plain water)', answer: 'Nothing' },
-            { label: 'Cup B (salt water)', answer: '2 teaspoons of salt' },
-            { label: 'Cup C (sugar water)', answer: '4 tablespoons of sugar or syrup' }
+            { label: 'Cup B (salt water)', answer: '3 tablespoons of salt' },
+            { label: 'Cup C (sugar water)', answer: '3 tablespoons of sugar or syrup' }
           ]
         },
         {
@@ -264,8 +312,8 @@ window.ASSIGNMENT = {
         },
         {
           type: 'numbers',
-          text: 'Starting measurements. Measure each gummy bear from the top of its head to the bottom of its feet, before it goes in the water. (No kit? Use the measurements from the lab video.)',
-          easy: 'Measure each gummy bear from head to feet in millimeters (mm) before it goes in the water. (No kit? Use the measurements from the lab video.)',
+          text: 'Starting measurements. Before the experiment starts, measure each gummy bear from the top of its head to the bottom of its feet, in millimeters. Your teacher’s were 15 mm, but yours may be different. (No kit? Use 15 mm, the measurement from the lab video.)',
+          easy: 'Measure each gummy bear from head to feet in millimeters (mm) before it goes in the water. (No kit? Use 15 mm, from the lab video.)',
           unit: 'mm',
           items: [
             { label: 'Cup A (plain water) gummy bear', between: [5, 60], tip: 'Measure in millimeters (mm), not centimeters. A gummy bear is about 2 centimeters tall, and 1 centimeter is 10 millimeters.' },
@@ -279,8 +327,8 @@ window.ASSIGNMENT = {
           items: [
             'I watched the lab video.',
             'My 3 cups are labeled A (plain water), B (salt water), and C (sugar water).',
-            'Each cup has 1 cup (240 mL) of room-temperature water. I stirred the salt into cup B and the sugar or syrup into cup C until it dissolved.',
-            'I measured each gummy bear before it went in the water.',
+            'Each cup has about 1 cup of room-temperature water. I stirred 3 tablespoons of salt into cup B and 3 tablespoons of sugar or syrup into cup C until it dissolved.',
+            'I measured each gummy bear in millimeters before it went in the water, and I wrote it down.',
             'I put one gummy bear in each cup, and I wrote down the date and time.',
             'My cups are in a safe place where no one will eat or drink them, and I will come back in about 24 hours.'
           ]
@@ -305,7 +353,7 @@ window.ASSIGNMENT = {
         + '<p><b>Do it:</b></p><ol>'
         + '<li>Take a look at your cups before you touch anything. What do you notice?</li>'
         + '<li>Use the spoon to take out one gummy bear at a time. Gently blot it on a paper towel.</li>'
-        + '<li>Measure it the same way as before: from the top of its head to the bottom of its feet, in millimeters. Be gentle, because it may be soft.</li>'
+        + '<li>Measure it the same way as before: on the centimeter side, from the top of its head (at the 0) to the bottom of its feet, in millimeters. Be gentle, because it may be soft.</li>'
         + '<li>Line up your gummy bears in front of their cups and take a photo.</li>'
         + '<li>Clean up: throw the gummy bears away (do not eat them), pour the salt water and sugar water down the sink, rinse the cups, and wash your hands.</li></ol>'
         + '<p><b>Read:</b> A gummy bear that got bigger took in water. Its cup was hypotonic to it. A gummy bear that got smaller lost water. Its cup was hypertonic to it. A gummy bear that stayed the same size was in a solution that was about isotonic to it.</p>'
@@ -313,8 +361,8 @@ window.ASSIGNMENT = {
       questions: [
         {
           type: 'numbers',
-          text: 'Measurements after 24 hours. Measure each gummy bear again, the same way. (No kit? Use the measurements from the lab video.)',
-          easy: 'Measure each gummy bear again, the same way, in millimeters. (No kit? Use the measurements from the lab video.)',
+          text: 'Measurements after 24 hours. Measure each gummy bear again, the same way. (No kit? Use the measurements from the 24-hour lab video.)',
+          easy: 'Measure each gummy bear again, the same way, in millimeters. (No kit? Use the measurements from the 24-hour lab video.)',
           unit: 'mm',
           items: [
             { label: 'Cup A (plain water) gummy bear', between: [3, 120], tip: 'Measure in millimeters (mm) from the top of the head to the bottom of the feet. 1 centimeter is 10 millimeters.' },
