@@ -191,6 +191,16 @@
       "permanent": false
     },
     {
+      "source": "/skeletal-muscle-model",
+      "destination": "/assignments/skeletal-muscle-model/",
+      "permanent": false
+    },
+    {
+      "source": "/skeletal-muscle-model/",
+      "destination": "/assignments/skeletal-muscle-model/",
+      "permanent": false
+    },
+    {
       "source": "/unit-4-test",
       "destination": "/assignments/test-unit-4-transport/",
       "permanent": false
