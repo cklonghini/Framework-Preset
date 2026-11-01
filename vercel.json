@@ -41,6 +41,26 @@
       "permanent": false
     },
     {
+      "source": "/skeletal-system",
+      "destination": "/assignments/explore-more-skeletal-system/",
+      "permanent": false
+    },
+    {
+      "source": "/skeletal-system/",
+      "destination": "/assignments/explore-more-skeletal-system/",
+      "permanent": false
+    },
+    {
+      "source": "/explore-more-skeletal-system",
+      "destination": "/assignments/explore-more-skeletal-system/",
+      "permanent": false
+    },
+    {
+      "source": "/explore-more-skeletal-system/",
+      "destination": "/assignments/explore-more-skeletal-system/",
+      "permanent": false
+    },
+    {
       "source": "/chemical-reaction",
       "destination": "/assignments/explore-simulating-a-chemical-reaction/",
       "permanent": false
