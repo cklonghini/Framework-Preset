@@ -14,8 +14,12 @@
   Amounts the teacher set for everyone: about 1 cup of water per cup, 3 tablespoons of salt, and 3 tablespoons of sugar
   (the video shows larger amounts; the reading tells students to use these). Her gummy bears started at 15 mm; students
   measure their own before the experiment and again after 24 hours.
-  PLACEHOLDER: the video for the 24-hour check (Part 4) is not here yet. When it comes, add it to Part 4 as a whole
-  clip like "setup", and take out the "coming soon" line in Part 4.
+  Part 4 has the teacher's 24-hour results video (clip "results"). The teacher had no transcript for it, so its captions
+  (source/osmosis-lab-24h.vtt) are a draft made with offline speech-to-text and cleaned up by hand; a few muddy stretches
+  near the start are marked [Audio unclear]. Her results (started at 15 mm): water 20 and 19 mm, sugar 17 and 16 mm,
+  salt 9 and 10 mm. media/teacher-results.jpg is her photo of the bears after 24 hours.
+  The storage key stays osmosis-lab-v3 on purpose: students are mid-experiment, and a new key would erase their
+  starting measurements from Part 3.
   Sources (in source/, not saved to GitHub): Osmosis_Lab.pdf (the classroom handout, "Orbeez or Gummy Bears"),
   the Amoeba Sisters video, and an osmosis rap video that is not used yet.
   Write *scientific names* between asterisks to show them in italics. Reading boxes and tables use HTML.
@@ -64,7 +68,10 @@ window.ASSIGNMENT = {
               of: 'Osmosis and Water Potential (Updated)' },
     /* Part 3: the teacher's lab setup video */
     setup:  { src: 'media/osmosis-lab-setup.mp4', from: 0, to: 241.9, seconds: 242, title: 'Osmosis Lab Setup',
-              of: 'Osmosis Lab Setup', whole: true }
+              of: 'Osmosis Lab Setup', whole: true },
+    /* Part 4: the teacher's 24-hour results video */
+    results: { src: 'media/osmosis-lab-results.mp4', from: 0, to: 158.4, seconds: 159, title: 'Osmosis Lab Results (After 24 Hours)',
+               of: 'Osmosis Lab Results (After 24 Hours)', whole: true }
   },
 
   parts: [
@@ -346,10 +353,11 @@ window.ASSIGNMENT = {
     /* ---------------------------------------------------------------- Part 4 */
     {
       title: 'After 24 hours: measure and explain',
-      intro: 'Wait about 24 hours after your gummy bears went in the water. Then come back to this page to measure them again and explain what happened.',
-      clips: ['fish'],
+      intro: 'Wait about 24 hours after your gummy bears went in the water. Then come back to this page. First, watch your teacher measure her gummy bears. The video stops on its own 3 times and a question pops up. Then measure your own gummy bears again and explain what happened.',
+      easyIntro: 'Wait about 24 hours after your gummy bears went in the water. Then come back to this page. First, watch your teacher measure her gummy bears. The video stops on its own 2 times and a question pops up. Then measure your own gummy bears again and explain what happened.',
+      clips: ['results', 'fish'],
+      images: [ { src: 'media/teacher-results.jpg', alt: 'Your teacher’s gummy bears after 24 hours, two from each cup, on a paper towel with three rows labeled water, sugar, and salt.', caption: 'Your teacher’s gummy bears after 24 hours. Compare the sizes in each row.' } ],
       read: KIT
-        + '<p><b>Watch:</b> <i>Coming soon: your teacher will add a video for this part here.</i></p>'
         + '<p><b>Do it:</b></p><ol>'
         + '<li>Take a look at your cups before you touch anything. What do you notice?</li>'
         + '<li>Use the spoon to take out one gummy bear at a time. Gently blot it on a paper towel.</li>'
@@ -360,9 +368,40 @@ window.ASSIGNMENT = {
         + '<p><b>Connect to cells:</b> In the clip, a saltwater fish goes into fresh water, and water goes into its cells. It works the other way, too. When a living thing from fresh water is put in salty water, the salty water is the side with the greater solute concentration, so water leaves its cells.</p>',
       questions: [
         {
+          at: 104,
+          type: 'choice',
+          text: 'Your teacher’s gummy bears started at 15 millimeters. After 24 hours in plain water, her first gummy bear measured 20 millimeters. What happened to it?',
+          easy: 'Her gummy bear started at 15 mm. After 24 hours in plain water, it was 20 mm. What happened?',
+          options: ['It got bigger', 'It got smaller', 'It stayed the same size'], answer: 0,
+          explain: 'Right. It grew from 15 mm to 20 mm, so it took in water. Her second plain water bear was 19 mm.',
+          tip: 'Compare the two numbers. Is 20 mm more or less than 15 mm?'
+        },
+        {
+          at: 132,
+          type: 'choice',
+          support: false,
+          text: 'How long were your teacher’s two gummy bears from the sugar water after 24 hours?',
+          easy: 'How long were the two sugar water gummy bears after 24 hours?',
+          options: ['17 mm and 16 mm', '20 mm and 19 mm', '9 mm and 10 mm', '15 mm and 15 mm'], answer: 0,
+          explain: 'Right. The sugar water bears were 17 mm and 16 mm. They grew a little from 15 mm, but not as much as the plain water bears.',
+          tip: 'Rewind to about 1:56 and listen for “when I go to measure the sugar ones.”'
+        },
+        {
+          at: 145,
+          type: 'selects',
+          text: 'Your teacher’s gummy bears all started at 15 mm. Use the video to tell what happened to the gummy bears in each cup.',
+          easy: 'All of her gummy bears started at 15 mm. What happened in each cup?',
+          options: ['Got bigger', 'Got smaller', 'Stayed the same size'],
+          items: [
+            { label: 'Plain water (20 mm and 19 mm)', answer: 'Got bigger', hint: 'Compare 20 mm and 19 mm to the starting size of 15 mm.' },
+            { label: 'Sugar water (17 mm and 16 mm)', answer: 'Got bigger', hint: 'Compare 17 mm and 16 mm to the starting size of 15 mm. Even a small change counts.' },
+            { label: 'Salt water (9 mm and 10 mm)', answer: 'Got smaller', hint: 'Compare 9 mm and 10 mm to the starting size of 15 mm.' }
+          ]
+        },
+        {
           type: 'numbers',
-          text: 'Measurements after 24 hours. Measure each gummy bear again, the same way. (No kit? Use the measurements from the 24-hour lab video.)',
-          easy: 'Measure each gummy bear again, the same way, in millimeters. (No kit? Use the measurements from the 24-hour lab video.)',
+          text: 'Measurements after 24 hours. Measure each gummy bear again, the same way. (No kit? Use your teacher’s first gummy bear from each cup in the video: 20 mm, 17 mm, and 9 mm.)',
+          easy: 'Measure each gummy bear again, the same way, in millimeters. (No kit? Use your teacher’s: 20 mm, 17 mm, and 9 mm.)',
           unit: 'mm',
           items: [
             { label: 'Cup A (plain water) gummy bear', between: [3, 120], tip: 'Measure in millimeters (mm) from the top of the head to the bottom of the feet. 1 centimeter is 10 millimeters.' },
