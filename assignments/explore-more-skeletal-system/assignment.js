@@ -2,13 +2,16 @@
   Explore - More About the Skeletal System (Anatomy & Physiology A)
   Everything a student sees is written in this file. The shared engine in /engine builds the page,
   progress bars, PDF printout, Listen buttons, and captions from it.
-  Main video: Bozeman Science (Mr. Andersen), "The Skeletal System". Captions come from the teacher's transcript
-  (source/andersen-transcript.txt, not saved to GitHub).
+  Clips: Bozeman Science (Mr. Andersen), "The Skeletal System". Captions come from the teacher's transcript
+  (source/andersen-transcript.txt, not saved to GitHub). The teacher chose not to show the full video at the top:
+  students watch each part's clip as they reach it.
   Second video: Flocabulary, "Skeletal System". It has captions built into the picture, and the teacher chose not to
   add a caption file, so no question depends on what it says.
-  Reading for Part 6: Let's Talk Science, "Spaceflight and Bone Loss" (source/, and linked online).
+  Reading for Part 6: Let's Talk Science, "Spaceflight and Bone Loss". The teacher's PDF (source/) is shown as page
+  images (media/article-1.jpg to article-4.jpg, made with tools/station_images.py cards, pages 1-4, cropped).
   Text rules: *text* is shown in italics (use it for scientific names). Reading boxes (read) and tables use HTML.
 */
+var V = 'The Skeletal System';     // Mr. Andersen's video, the source of every clip but Flocabulary
 window.ASSIGNMENT = {
   title: 'Explore - More About the Skeletal System',
   course: 'Anatomy & Physiology A',
@@ -26,26 +29,29 @@ window.ASSIGNMENT = {
     ]
   },
 
-  icon: '<svg viewBox="0 0 64 72" aria-hidden="true" focusable="false">'
-    + '<path d="M18 14 a7 7 0 1 0 -6 11 l29 29 a7 7 0 1 0 11 6 a7 7 0 1 0 -6 -11 l-29 -29 a7 7 0 1 0 -11 -6 Z" transform="translate(2 2)" fill="var(--ligand)" stroke="var(--primary-ink)" stroke-width="3" stroke-linejoin="round"/></svg>',
+  icon: '<svg viewBox="0 0 64 72" aria-hidden="true" focusable="false"><g transform="rotate(-40 32 36) translate(32 36) scale(.92) translate(-32 -36)">'
+    + '<g fill="var(--ink)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"><circle cx="9" cy="29" r="7.5"/><circle cx="9" cy="43" r="7.5"/><circle cx="55" cy="29" r="7.5"/><circle cx="55" cy="43" r="7.5"/><rect x="10" y="30.5" width="44" height="11" rx="2"/></g>'
+    + '<g fill="#f4ecd6"><circle cx="9" cy="29" r="7.5"/><circle cx="9" cy="43" r="7.5"/><circle cx="55" cy="29" r="7.5"/><circle cx="55" cy="43" r="7.5"/><rect x="10" y="30.5" width="44" height="11" rx="2"/></g>'
+    + '<path d="M18 33.5 H44" stroke="#fffaf0" stroke-width="2.5" stroke-linecap="round"/></g></svg>',
 
-  video: {
-    title: 'The Skeletal System',
-    src: 'media/skeletal-system-video.mp4',
-    seconds: 479
+  /* No full video at the top (the teacher's choice): each part has its own clip. */
+  start: {
+    intro: 'Each part has a short clip from the video “The Skeletal System” by Mr. Andersen (Bozeman Science), with just the piece you need for that part. Part 1 starts with a song from Flocabulary, and Part 6 has an article to read.',
+    easyIntro: 'Each part has a short clip from the video “The Skeletal System” by Mr. Andersen (Bozeman Science). Each clip has just the piece you need for that part. Part 6 has an article to read.',
+    after: 'In each part, watch the clip, open the reading, and then practice and check your work. You will also answer three written questions. In one of them you will use transition words to point to your evidence and highlight them in yellow. In another, you will make a claim, support it with evidence, and give your reasoning. Each part opens when you finish the one before it.'
   },
 
-  /* short clips, one or two per part. from/to are the times in the full video (they are shown to students). */
+  /* short clips, one or two per part. from/to are the times in Mr. Andersen's video (they are shown to students). */
   clips: {
     flocabulary: { support: false, src: 'media/clip-flocabulary.mp4', from: 0, to: 203.9, seconds: 204,
                    title: 'Skeletal System (Flocabulary)', of: 'Skeletal System (Flocabulary)', whole: true },
-    types:       { src: 'media/clip-types.mp4', from: 0.0, to: 48.0, seconds: 48, title: 'Exoskeletons and endoskeletons' },
-    bone:        { src: 'media/clip-bone.mp4', from: 48.0, to: 120.0, seconds: 72, title: 'Bone is alive: compact bone, spongy bone, and marrow' },
-    support:     { src: 'media/clip-support.mp4', from: 115.0, to: 178.0, seconds: 63, title: 'The five functions, support, and the axial and appendicular skeleton' },
-    muscles:     { src: 'media/clip-muscles.mp4', from: 178.0, to: 212.0, seconds: 34, title: 'Muscles, tendons, and ligaments' },
-    joints:      { src: 'media/clip-joints.mp4', from: 212.0, to: 340.0, seconds: 128, title: 'The five types of joints' },
-    storage:     { src: 'media/clip-storage.mp4', from: 335.0, to: 413.0, seconds: 78, title: 'Storage and blood' },
-    homeostasis: { src: 'media/clip-homeostasis.mp4', from: 407.0, to: 478.0, seconds: 71, title: 'Homeostasis: controlling blood calcium' }
+    types:       { src: 'media/clip-types.mp4', from: 0.0, to: 48.0, seconds: 48, title: 'Exoskeletons and endoskeletons', of: V },
+    bone:        { src: 'media/clip-bone.mp4', from: 48.0, to: 120.0, seconds: 72, title: 'Bone is alive: compact bone, spongy bone, and marrow', of: V },
+    support:     { src: 'media/clip-support.mp4', from: 115.0, to: 178.0, seconds: 63, title: 'The five functions, support, and the axial and appendicular skeleton', of: V },
+    muscles:     { src: 'media/clip-muscles.mp4', from: 178.0, to: 212.0, seconds: 34, title: 'Muscles, tendons, and ligaments', of: V },
+    joints:      { src: 'media/clip-joints.mp4', from: 212.0, to: 340.0, seconds: 128, title: 'The five types of joints', of: V },
+    storage:     { src: 'media/clip-storage.mp4', from: 335.0, to: 413.0, seconds: 78, title: 'Storage and blood', of: V },
+    homeostasis: { src: 'media/clip-homeostasis.mp4', from: 407.0, to: 478.0, seconds: 71, title: 'Homeostasis: controlling blood calcium', of: V }
   },
 
   parts: [
@@ -370,9 +376,46 @@ window.ASSIGNMENT = {
     /* ---------------------------------------------------------------- Part 6 */
     {
       title: 'Bones in space',
-      intro: 'Bones are alive, and they change depending on how you use them. Read about what happens to astronauts’ bones in space, and what that means for your bones here on Earth.',
-      readLabel: 'Read about spaceflight and bone loss',
-      read: '<p><b>Read:</b> This reading comes from the article <a href="https://letstalkscience.ca/educational-resources/stem-in-context/spaceflight-and-bone-loss" target="_blank" rel="noopener noreferrer">“Spaceflight and Bone Loss” by Let’s Talk Science</a> (it opens in a new tab). You can read the whole article there, then come back to this tab. Everything you need for the questions is below.</p>'
+      intro: 'Bones are alive, and they change depending on how you use them. Read the article “Spaceflight and Bone Loss” from Let’s Talk Science to find out what happens to astronauts’ bones in space, and what that means for your bones here on Earth. The article is below in four pages. Select a page to open it full size, or use the Listen button under it to hear it read aloud.',
+      images: [
+        { src: 'media/article-1.jpg', caption: 'Article page 1 of 4.',
+          alt: 'Page 1 of the article Spaceflight and Bone Loss, with a photo of astronaut Robert Thirsk cycling on the International Space Station',
+          text: '<p><b>Spaceflight and Bone Loss</b> (Let’s Talk Science)</p>'
+            + '<p><i>Photo: Former Canadian astronaut Robert Thirsk enjoys cycling on board the International Space Station (NASA, CSA).</i></p>'
+            + '<p>Space travel has often been a big theme in the movies. But long-distance space travel is a cool and exciting possibility for ordinary people in the not-so-distant future. For example, NASA has, since 2009, been developing the Orion spacecraft. One day, this spacecraft might send humans beyond Earth’s orbit. This has not happened since the final Apollo missions to the Moon in 1972.</p>'
+            + '<p>But don’t start planning your trip to Mars just yet! Medical researchers are still trying to sort some things out. Specifically, there are some pretty serious health issues associated with long-term travel in outer space. One of these issues is bone loss. Astronauts have suffered bone loss even on relatively short trips closer to Earth.</p>'
+            + '<p><b>Did you know?</b> As of 2019, a total of 562 people have reached outer space. Only 24 of them have left Earth’s orbit.</p>'
+            + '<p>On Earth, you experience a constant <b>gravitational pull</b> towards the centre of the planet. But when astronauts travel into outer space, they experience a condition called <b>weightlessness</b> or <b>microgravity</b>. This is what causes bone loss. To better understand why, you need to know a bit about how bones are formed and maintained in your body.</p>'
+            + '<p><b>What are bones made of?</b></p>'
+            + '<p>Bones are a type of dense <b>connective tissue</b> that helps to hold your body together. So are <b>ligaments</b> and <b>tendons</b>. Like any other part of the human body, bones are made up of cells. The cells in bone tissue are reinforced by <b>collagen</b> networks. These are clumps of collagen <b>proteins</b>. In fact, your bone tissue is very similar to your hair. The difference is that bones also contain a lot of inorganic minerals like <b>calcium</b> and <b>phosphate</b>. These proteins and minerals are deposited on the outside of bone cells to create something called the <b>bone matrix</b>. The bone matrix gives bone tissue its strength.</p>' },
+        { src: 'media/article-2.jpg', caption: 'Article page 2 of 4.',
+          alt: 'Page 2 of the article, with a diagram of the parts of a bone and a diagram of bone-building and bone-loss cells',
+          text: '<p><i>Diagram: Parts of a bone, including blood vessels, bone marrow, compact (hard) bone, spongy bone, and cartilage.</i></p>'
+            + '<p>As you grow, your bone tissue is continuously breaking down and being rebuilt. This process is called <b>remodeling</b>. It is a very important process for your general health. The two main types of cells that maintain and regulate bone structure are osteoblasts and osteoclasts.</p>'
+            + '<ol><li><b>Osteoblasts</b> (Bs) build bones using the same kinds of cells that otherwise become fat, muscle, and cartilage. To do this, they lay down layers of collagen. Then they lay down layers of minerals.</li>'
+            + '<li><b>Osteoclasts</b> (Cs) are responsible for breaking up bones and absorbing them back into the body. They use the same cells as <b>white blood cells</b>, which play a key role in your <b>immune system</b>. With the help of these cells, osteoclasts dissolve the minerals on the outside of the bone and break down the bone matrix. This causes the release of a lot of calcium. The body then reabsorbs the calcium. This happens in a process aptly called <b>resorption</b>.</li></ol>'
+            + '<p>Bs and Cs need to be in balance and be able to communicate properly for bone remodelling to occur and for your bones to remain healthy.</p>'
+            + '<p><i>Diagram: Osteoblasts build bones. During this step, calcium is absorbed (bone building). Osteoclasts break down bone. During this step, calcium is released back into the body (bone loss).</i></p>'
+            + '<p>There is a third type of bone cells called <b>osteocytes</b>. Osteocytes are mature bone cells that are trapped inside the bone by the osteoblasts. They occupy spaces in the bone called <b>lacunae</b>. Osteocytes play many different roles in bone development and maintenance. For example, they signal to osteoblasts and help with the mechanical functions of the bones. They also play a role in recognizing cracks in the bone and relaying this information to other bone cells.</p>' },
+        { src: 'media/article-3.jpg', caption: 'Article page 3 of 4. The top line is hidden under the logo in the PDF. It says: “Remodelling is key to understanding bone diseases such as osteoporosis. It is also the key to why astronauts experience bone loss in space.”',
+          alt: 'Page 3 of the article, with pictures comparing healthy spongy bone to weakened spongy bone',
+          text: '<p>Remodelling is key to understanding bone diseases such as <b>osteoporosis</b>. It is also the key to why astronauts experience bone loss in space. In space, astronauts experience <b>spaceflight osteopenia</b>. This condition can cause astronauts to lose, on average, one to two percent of their bone mass every month. This bone loss typically happens in the legs, hips, and spines of astronauts. Once astronauts return to Earth, it can take three or four years for those bones to recover!</p>'
+            + '<p><i>Picture: The rectangle on the left shows what healthy spongy bone looks like, and the rectangle on the right shows what weakened spongy bone looks like.</i></p>'
+            + '<p><b>Did you know?</b> Thinning bone mass also triggers a rise in calcium levels in the blood. This increases the risk of kidney stones.</p>'
+            + '<p>We already know that because of remodelling, your bones are always changing. Remember, astronauts experience microgravity while in space. This means their bones do not undergo the stress of supporting their bodies against gravity. Scientists also know that exercise is important for bone maintenance and regulating the activity of Bs and Cs. Exercise helps to keep both your bones and muscles strong. That makes it key to helping astronauts reduce the amount of bone loss they experience in space. To reduce bone loss, astronauts must exercise for a minimum of 2 hours per day.</p>'
+            + '<p>On Earth, the best way to build bone mass is by taking part in <b>load-bearing</b> activities, such as walking, running, and playing basketball. In space, it is difficult to perform these activities due to microgravity. Astronauts must strap themselves down to treadmills in order to get the same benefits of walking and running!</p>'
+            + '<p><b>How are Scientists Trying to Help?</b></p>'
+            + '<p>A number of studies have been conducted, and others are now underway to better understand bone loss in space. A study conducted in 2013 compared the bone loss of astronauts that only exercised while in space and astronauts that exercised in combination with taking <b>bisphosphonates</b>, a class of drugs already used to treat osteoporosis in older adults. The study concluded that taking bisphosphonates along with exercise may be useful in protecting astronauts from severe bone loss in long-duration space flights.</p>' },
+        { src: 'media/article-4.jpg', caption: 'Article page 4 of 4.',
+          alt: 'Page 4 of the article, with a photo of astronaut Chris Hadfield getting a CT scan of his ankle',
+          text: '<p><i>Photo: Chris Hadfield undergoes a quantitative CT scan to obtain detailed images of the bones in his ankle, shortly after his return to Earth in 2013 (Canadian Space Agency).</i></p>'
+            + '<p>Another study sent a group of six mice into space. A genetic therapy was used to cause three of them to produce extra <b>pleiotrophin (PTN)</b>, a protein that is known to help bone development. The results were very positive: the mice with extra PTN lost only 3% of their spine volume, compared to a 41.5% decrease in the untreated mice.</p>'
+            + '<p>Research on the International Space Station is currently underway that will help scientists better understand bone loss in space and on Earth. NASA’s Early Detection of Osteoporosis in Space project is investigating how factors, such as exercise and diet in space, are working to prevent bone loss in astronauts. The International Space Station is also equipped with a Bioculture System that will allow scientists to conduct stem cell research and explore its applications to bone loss in space. Most recently, scientists have been working on ways to grow new bones!</p>'
+            + '<p><b>Did you know?</b> NASA has established a Microgravity University. It allows university students and K-12 educators to learn and conduct experiments in a microgravity environment!</p>'
+            + '<p>So even if space travel comes with some health risks, researchers are actively exploring ways of reducing or even eliminating the risk of bone density loss among astronauts. And who knows? They might even find a cure for osteoporosis along the way!</p>' }
+      ],
+      readLabel: 'Key points from the article',
+      read: '<p><b>Key points:</b> Here are the main ideas from the article, all in one place. Use them along with the article pages to answer the questions.</p>'
         + '<p><b>Why space is hard on bones:</b> On Earth, gravity is always pulling you toward the center of the planet. In space, astronauts experience <b>weightlessness</b>, also called <b>microgravity</b>. This is what causes bone loss.</p>'
         + '<p><b>What bones are made of:</b> Bone is a type of dense connective tissue, like ligaments and tendons. Bone cells are surrounded by collagen (a protein) and minerals like calcium and phosphate. Together these make the <b>bone matrix</b>, which gives bone its strength.</p>'
         + '<p><b>Remodeling:</b> Your bone tissue is always breaking down and being rebuilt. This is called <b>remodeling</b>. Three kinds of bone cells do this work:</p>'
