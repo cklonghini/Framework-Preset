@@ -5,7 +5,7 @@
 
   This combines two classroom workbooks: "Explore - Joint Classification & Movement" (Parts 1 to 3, plus its
   critical-thinking questions spread through those parts) and "Explore - The Muscular System" (the six station
-  cards, in Parts 6 and 7). The teacher asked for no full video at the top: students watch only the short clips
+  cards, in Parts 7 and 8). Part 1 is a vocabulary deck: students say 20 words and definitions out loud. The teacher asked for no full video at the top: students watch only the short clips
   in each part. Clips come from three videos (originals and transcripts in source/, not saved to GitHub):
     - Crash Course A&P #20 "Joints" (starts at 1:47, as the teacher asked). Captions: the teacher's transcript,
       lined up to this video file's audio. The 1:49 to 2:02 lines were not in her transcript and were transcribed
@@ -20,7 +20,7 @@
 window.ASSIGNMENT = {
   title: 'Explore - Joint Classification and Movement',
   course: 'Anatomy & Physiology A',
-  storageKey: 'explore-joint-classification-and-movement-v2',
+  storageKey: 'explore-joint-classification-and-movement-v3',
   short: 'joints-and-movement',             // short link: SITE/joints-and-movement
 
   /* supported version (?support=eagle): the goal box at the top */
@@ -42,7 +42,7 @@ window.ASSIGNMENT = {
   /* No full video at the top (the teacher's choice): each part has its own short clips. */
   start: {
     heading: 'How this assignment works',
-    intro: 'This assignment puts joints, movement, and muscles together. You will never watch a whole long video. Each part has one to three short clips to watch, then a reading and questions about that part. The clips come from three videos: “Joints” (Crash Course Anatomy & Physiology #20), “Anatomical Terms of Movement” (a short video with music and words on the screen, but no talking), and “Muscles, Part 1: Muscle Cells” (Crash Course Anatomy & Physiology #21). The last two parts use station cards about the muscles of the body.',
+    intro: 'This assignment puts joints, movement, and muscles together. First you will practice the vocabulary words out loud. You will never watch a whole long video: each part after that has one to three short clips to watch, then a reading and questions about that part. The clips come from three videos: “Joints” (Crash Course Anatomy & Physiology #20), “Anatomical Terms of Movement” (a short video with music and words on the screen, but no talking), and “Muscles, Part 1: Muscle Cells” (Crash Course Anatomy & Physiology #21). The last two parts use station cards about the muscles of the body.',
     after: 'Watch each clip before you answer the questions under it. Captions are on. For the movement video, the captions tell you the words on the screen and what the person is doing. Select a picture or station card to open it full size in a new tab. If a card is hard to read, use the Listen button under it, or open “Show the words on this card as text.” Work from top to bottom. Each part opens when you finish the one before it.'
   },
 
@@ -75,7 +75,110 @@ window.ASSIGNMENT = {
   },
 
   parts: [
-    /* ---------------------------------------------------------------- Part 1 */
+    /* ---------------------------------------------------------------- Part 1: vocabulary */
+    {
+      title: 'Vocabulary',
+      intro: 'Before you start, practice the 20 words you will use in this assignment. You will say each word and its definition out loud. Saying words out loud helps your brain remember them, and it lets your teacher hear from you. Find a spot where you can talk, and make sure your microphone works.',
+      read: '<p><b>Read:</b> These are the 20 words for this assignment.</p>'
+        + '<p><b>Joints</b></p><ul>'
+        + '<li><b>Joint</b>: a place where two or more bones meet.</li>'
+        + '<li><b>Fibrous joint</b>: a joint held together by dense fibrous connective tissue, with no joint cavity. Most do not move.</li>'
+        + '<li><b>Cartilaginous joint</b>: a joint where cartilage joins the bones. It has no joint cavity and moves only a little.</li>'
+        + '<li><b>Synovial joint</b>: a freely movable joint with a fluid-filled joint cavity between the bones.</li>'
+        + '<li><b>Synarthrosis</b>: a joint that does not move at all, like the sutures between the skull bones.</li>'
+        + '<li><b>Amphiarthrosis</b>: a joint that moves only slightly, like where the two pubic bones meet.</li>'
+        + '<li><b>Diarthrosis</b>: a joint that moves freely, like the knee and the elbow.</li></ul>'
+        + '<p><b>Movement</b></p><ul>'
+        + '<li><b>Flexion</b>: a movement that decreases the angle of a joint, such as bending your elbow.</li>'
+        + '<li><b>Extension</b>: a movement that increases the angle of a joint, such as straightening your elbow.</li>'
+        + '<li><b>Abduction</b>: moving a body part away from the midline of the body.</li>'
+        + '<li><b>Adduction</b>: moving a body part toward the midline of the body.</li>'
+        + '<li><b>Rotation</b>: turning a bone around its own long axis, like shaking your head “no.”</li>'
+        + '<li><b>Circumduction</b>: moving a limb in a cone-shaped path, like drawing a big circle in the air with your arm.</li></ul>'
+        + '<p><b>Muscles</b></p><ul>'
+        + '<li><b>Skeletal muscle</b>: striated, mostly voluntary muscle that attaches to bones and pulls on them to move the body.</li>'
+        + '<li><b>Muscle fiber</b>: one muscle cell. It is made of many tiny threads called myofibrils.</li>'
+        + '<li><b>Sarcomere</b>: a segment of a myofibril, between two Z lines. Sarcomeres shorten when a muscle contracts.</li>'
+        + '<li><b>Actin</b>: the protein that makes up the thin filaments. Myosin grabs actin and pulls it.</li>'
+        + '<li><b>Myosin</b>: the protein that makes up the thick filaments. Its heads grab actin and pull it.</li>'
+        + '<li><b>Prime mover</b>: the main muscle that makes a movement, like the diaphragm when you breathe in.</li>'
+        + '<li><b>Antagonist</b>: a muscle that does the opposite movement of another muscle, like the triceps (straightens the elbow) against the biceps (bends it).</li></ul>'
+        + '<p><b>How the speaking cards work:</b> The cards come one at a time. Press <b>Listen</b> to hear the word and its definition. Then press <b>Say it</b>, say the word, and read its definition out loud. The card turns green when it hears the word and its key ideas, and then the next card opens. If your browser asks to use the microphone, choose <b>Allow</b>.</p>'
+        + '<p><b>Memory tip:</b> <b>Ab</b>duction <b>ab</b>ducts (takes away) your arm from your body. <b>Add</b>uction <b>add</b>s your arm back to your body.</p>'
+        + '<p>If your microphone isn’t working, reach out to IT to get it working. It’s so important for us to hear from you in our online school, so you’ll need a working microphone to finish this activity.</p>',
+      questions: [
+        {
+          type: 'speak',
+          deck: true,
+          text: 'Read each card out loud. Listen to the card first if you like. Then press Say it, say the word, and read its definition. The next card opens when this one turns green.',
+          easy: 'Say each card out loud. You can press Listen first. Then press Say it. Say the word and read the definition. The card turns green, and the next card opens.',
+          cards: [
+            { term: 'Joint', def: 'A place where two or more bones meet.',
+              img: { src: 'media/card-joint.jpg', alt: 'Drawing of the ends of two bones meeting at a joint.' },
+              say: /\bjoints?\b|\bjoin\b/, keys: [/\bbones?\b/, /\b(meet|meets|meeting|connect|connects|join|joins|come together|comes together)\b/] },
+            { term: 'Fibrous joint', def: 'A joint held together by dense fibrous connective tissue, with no joint cavity. Most do not move.',
+              img: { src: 'media/card-fibrous.jpg', alt: 'Drawing of two bones tied together by strands of dense connective tissue, with no space between them.' },
+              say: /\bfib(rous|erous|ros|rus|res?|ers?)\b|\bfiber us\b|\bfibro/, keys: [/\b(connective|tissue|fibers?|fibres?)\b/, /\b(cavity|cavities|move|moves|movement)\b/] },
+            { term: 'Cartilaginous joint', def: 'A joint where cartilage joins the bones. It has no joint cavity and moves only a little.',
+              img: { src: 'media/card-cartilaginous.jpg', alt: 'Drawing of two bones joined by a pad of cartilage, with no space between them.' },
+              say: /\bcartil|\bcart[ae]l[ae]|\bcartlidge|\bcartlage|\bcarti/, keys: [/\b(little|slight|slightly|bit|cavity)\b/] },
+            { term: 'Synovial joint', def: 'A freely movable joint with a fluid-filled joint cavity between the bones.',
+              img: { src: 'media/card-synovial.jpg', alt: 'Drawing of two bones with a fluid-filled joint cavity between them, inside a capsule.' },
+              say: /\bsyn?ovi(al|el|ol)\b|\bsign? ?ovial\b|\bsenovial\b|\bsynovial\b|\bsin ?ovial\b/, keys: [/\b(move|moves|moving|movable|moveable|freely)\b/, /\b(fluid|liquid|cavity)\b/] },
+            { term: 'Synarthrosis', def: 'A joint that does not move at all, like the sutures between the skull bones.',
+              img: { src: 'media/card-synarthrosis.jpg', alt: 'Drawing of a skull from the video, with the word synarthroses.' },
+              say: /\bsyn|\bsin ?ar|\bsen ?ar|arthr|throsis|throw ?sis/, keys: [/(not|doesnt|dont|no|cannot|cant|never) (move|moving)|immovable|at all/, /\b(skull|sutures?|cranium|cranial)\b/] },
+            { term: 'Amphiarthrosis', def: 'A joint that moves only slightly, like where the two pubic bones meet.',
+              img: { src: 'media/card-amphiarthrosis.jpg', alt: 'Drawing of the pelvis from the video, where the two pubic bones meet at the front, with the word amphiarthroses.' },
+              say: /\bamph|\bamf|\bam ?fee|\bam ?fi|arthr|throsis|throw ?sis/, keys: [/\b(slight|slightly|little|bit|partly|partially)\b/, /\b(pubic|pubis|public|pelvis|pelvic)\b/] },
+            { term: 'Diarthrosis', def: 'A joint that moves freely, like the knee and the elbow.',
+              img: { src: 'media/card-diarthrosis.jpg', alt: 'Drawing of a knee joint from the video, with the word diarthroses.' },
+              say: /\bdi ?arth|\bdie ?arth|\bdye ?arth|\bdiar|arthr|throsis|throw ?sis/, keys: [/\b(freely|free|fully|movable|moveable)\b/, /\b(knee|knees|elbow|elbows)\b/] },
+            { term: 'Flexion', def: 'A movement that decreases the angle of a joint, such as bending your elbow.',
+              img: { src: 'media/card-flexion.jpg', alt: 'A person from the movement video bending both elbows so the hands come up to the shoulders, with the word flexion.' },
+              say: /\bflexi(on|ng)\b|\bflection\b|\bflecks? ?ion\b|\bflexion\b/, keys: [/\b(decrease|decreases|decreasing|smaller|less|bend|bends|bending)\b/, /\b(angle|joint|elbow)\b/] },
+            { term: 'Extension', def: 'A movement that increases the angle of a joint, such as straightening your elbow.',
+              img: { src: 'media/card-extension.jpg', alt: 'A person from the movement video holding both arms straight out to the sides, with the word extension.' },
+              say: /\bextension\b|\bextend\b|\bexstension\b/, keys: [/\b(increase|increases|increasing|bigger|larger|straight|straighten|straightens|straightening)\b/, /\b(angle|joint|elbow)\b/] },
+            { term: 'Abduction', def: 'Moving a body part away from the midline of the body.',
+              img: { src: 'media/card-abduction.jpg', alt: 'A person from the movement video raising both arms out to the sides, away from the body, with the word abduction.' },
+              say: /\b(abduct|abduction|adduction|ab duction|add duction|a duction|abductions)\b/, keys: [/\baway\b/, /\b(midline|middle|center|centre|body)\b/], not: /\b(toward|towards|closer)\b/ },
+            { term: 'Adduction', def: 'Moving a body part toward the midline of the body.',
+              img: { src: 'media/card-adduction.jpg', alt: 'A person from the movement video with both arms back down at the sides, with the word adduction.' },
+              say: /\b(adduct|adduction|abduction|add duction|ad duction|a duction|adductions)\b/, keys: [/\b(toward|towards|to|closer|back)\b/, /\b(midline|middle|center|centre|body)\b/], not: /\baway\b/ },
+            { term: 'Rotation', def: 'Turning a bone around its own long axis, like shaking your head “no.”',
+              img: { src: 'media/card-rotation.jpg', alt: 'A person from the movement video turning both arms inward, with arrows and the words medial rotation.' },
+              say: /\brotat|\brow ?tation\b|\brotation\b/, keys: [/\b(turn|turns|turning|spin|spins|spinning|twist|twists)\b/, /\b(axis|axes|access|axle|axel)\b/] },
+            { term: 'Circumduction', def: 'Moving a limb in a cone-shaped path, like drawing a big circle in the air with your arm.',
+              img: { src: 'media/card-circumduction.jpg', alt: 'A person from the movement video moving one arm in a circle, with the word circumduction.' },
+              say: /\bcircum|\bsircum|\bsir ?come|\bcircle ?duction|\bcircumduction\b/, keys: [/\b(cone|cones|conical|circle|circles|circular)\b/, /\b(limb|arm|path)\b/] },
+            { term: 'Skeletal muscle', def: 'Striated, mostly voluntary muscle that attaches to bones and pulls on them to move the body.',
+              img: { src: 'media/card-skeletal-muscle.jpg', alt: 'The host of the muscles video flexing his arms, with the words 640 skeletal muscles.' },
+              say: /\bskelet(al|on|ol|le)\b|\bskeleton\b/, keys: [/\bbones?\b/, /\b(pull|pulls|pulling|move|moves|movement|voluntary)\b/] },
+            { term: 'Muscle fiber', def: 'One muscle cell. It is made of many tiny threads called myofibrils.',
+              img: { src: 'media/card-muscle-fiber.jpg', alt: 'Drawing from the muscles video of one muscle fiber cut open to show the bundle of tiny threads inside, labeled nuclei, sarcolemma, and mitochondria.' },
+              say: /\bfib(er|re|ers|res)\b|\bfiver\b/, keys: [/\bcells?\b/, /\b(threads?|myofibrils?|my ?o ?fibrils?|fibrils?)\b/] },
+            { term: 'Sarcomere', def: 'A segment of a myofibril, between two Z lines. Sarcomeres shorten when a muscle contracts.',
+              img: { src: 'media/card-sarcomere.jpg', alt: 'Drawing from the muscles video of a myofibril with one segment marked sarcomere.' },
+              say: /\bsarc|\bsark|\bsar ?co|\bsorc|\bsor ?co/, keys: [/\b(shorten|shortens|shorter|contract|contracts|contracting)\b/, /\b(z|zee|line|lines|segment|segments|myofibrils?)\b/] },
+            { term: 'Actin', def: 'The protein that makes up the thin filaments. Myosin grabs actin and pulls it.',
+              img: { src: 'media/card-actin.jpg', alt: 'Drawing from the muscles video of a myofibril with thin strands labeled actin strands.' },
+              say: /\bactin\b|\bacting\b|\bact in\b|\bactan\b|\backtin\b/, keys: [/\bthin\b/, /\b(filaments?|strands?|protein)\b/] },
+            { term: 'Myosin', def: 'The protein that makes up the thick filaments. Its heads grab actin and pull it.',
+              img: { src: 'media/card-myosin.jpg', alt: 'Drawing from the muscles video of a myofibril with thick strands labeled myosin strands next to the actin strands.' },
+              say: /\bmyosin\b|\bmy ?o ?sin\b|\bmio ?sin\b|\bmyo|\bmy ?a ?sin\b/, keys: [/\bthick\b/, /\b(pull|pulls|pulling|grab|grabs|heads?)\b/] },
+            { term: 'Prime mover', def: 'The main muscle that makes a movement, like the diaphragm when you breathe in.',
+              img: { src: 'media/card-prime-mover.jpg', alt: 'Drawing from Station 2 of the inside of the chest, with the dome-shaped diaphragm in red under the lungs.' },
+              say: /\bprime\b|\bprim\b|\bprimer\b|\bprimed\b/, keys: [/\b(main|chief|most important)\b/, /\b(movement|move|moves|muscle)\b/] },
+            { term: 'Antagonist', def: 'A muscle that does the opposite movement of another muscle, like the triceps (straightens the elbow) against the biceps (bends it).',
+              img: { src: 'media/card-antagonist.jpg', alt: 'Drawing from Station 3 of the front and back of the arm, with the biceps brachii and triceps brachii labeled.' },
+              say: /\bantag|\bantigon|\bant ?ag|\bantagonist\b/, keys: [/\b(opposite|opposes|oppose|against)\b/] }
+          ]
+        }
+      ]
+    },
+
+    /* ---------------------------------------------------------------- Part 2 */
     {
       title: 'Two ways to classify joints',
       intro: 'The first clip is a quick review of the skeleton. The second clip explains the two ways anatomists classify joints: by what they are made of (structure) and by how much they move (function).',
@@ -203,7 +306,7 @@ window.ASSIGNMENT = {
       ]
     },
 
-    /* ---------------------------------------------------------------- Part 2 */
+    /* ---------------------------------------------------------------- Part 3 */
     {
       title: 'Synovial joints: shape and movement',
       intro: 'All six of these are synovial (freely movable) joints. Their shape decides which movements they allow. Watch the video’s dance party, then use the diagram and the reading.',
@@ -317,7 +420,7 @@ window.ASSIGNMENT = {
       ]
     },
 
-    /* ---------------------------------------------------------------- Part 3 */
+    /* ---------------------------------------------------------------- Part 4 */
     {
       title: 'Movement vocabulary',
       intro: 'The first two clips have no talking. Read the words on the screen and watch what the person does. The third clip is from the joints video. It shows two movements of the forearm.',
@@ -389,7 +492,7 @@ window.ASSIGNMENT = {
       ]
     },
 
-    /* ---------------------------------------------------------------- Part 4 */
+    /* ---------------------------------------------------------------- Part 5 */
     {
       title: 'Skeletal muscle: tissue types and structure',
       intro: 'Joints let bones move, but muscles do the moving. Joints work because, as the video says, skeletal muscles create movement “by pulling bones in different directions as they contract.”',
@@ -458,7 +561,7 @@ window.ASSIGNMENT = {
       ]
     },
 
-    /* ---------------------------------------------------------------- Part 5 */
+    /* ---------------------------------------------------------------- Part 6 */
     {
       title: 'The sliding filament model',
       intro: 'How does a muscle cell actually pull? The video tells it like a love story between two proteins, actin and myosin. Watch all three clips. You can rewatch them as many times as you need.',
@@ -543,7 +646,7 @@ window.ASSIGNMENT = {
       ]
     },
 
-    /* ---------------------------------------------------------------- Part 6 */
+    /* ---------------------------------------------------------------- Part 7 */
     {
       title: 'Naming muscles and the upper body (Stations 1 to 3)',
       intro: 'These three station cards are from the muscle stations. There is no video in this part. Read each card, then answer the questions. Select a card to open it full size.',
@@ -645,7 +748,7 @@ window.ASSIGNMENT = {
       ]
     },
 
-    /* ---------------------------------------------------------------- Part 7 */
+    /* ---------------------------------------------------------------- Part 8 */
     {
       title: 'Legs, back, and face (Stations 4 to 6)',
       intro: 'Read the last three station cards, then answer the questions. The last question puts the whole assignment together: joints, movement, and muscles.',
@@ -757,12 +860,12 @@ window.ASSIGNMENT = {
           starters: ['The elbow is a … joint, so it …', 'Bending the elbow is called …, because …', 'The main muscles that do this are …, and the … does the opposite.', 'Inside the muscle fibers, …'],
           min: 100,
           ideas: [
-            { done: 'You classified the elbow joint.', q: 'Did you classify the elbow joint?', tip: 'Look back at Parts 1 and 2: the elbow’s structural type, functional type, and synovial joint type.',
+            { done: 'You classified the elbow joint.', q: 'Did you classify the elbow joint?', tip: 'Look back at Parts 2 and 3: the elbow’s structural type, functional type, and synovial joint type.',
               re: /synovial|diarthros|hinge/ },
-            { done: 'You named the movement.', q: 'Did you name the movement?', tip: 'Which movement word from Part 3 means decreasing the angle of a joint?', re: /flex/ },
+            { done: 'You named the movement.', q: 'Did you name the movement?', tip: 'Which movement word from Part 4 means decreasing the angle of a joint?', re: /flex/ },
             { done: 'You named the muscles that bend the elbow.', q: 'Did you name the muscles that bend the elbow?', tip: 'Station 3 names two muscles that contract together.', re: /biceps|brachialis/ },
             { done: 'You named the antagonist.', q: 'Did you name the muscle that does the opposite?', tip: 'Which Station 3 muscle straightens the elbow?', re: /triceps|antagonist/ },
-            { done: 'You explained what happens inside the muscle fibers.', q: 'Did you explain what happens inside the muscle fibers?', tip: 'Think about Part 5. Which two proteins slide past each other, and what do calcium and ATP do?',
+            { done: 'You explained what happens inside the muscle fibers.', q: 'Did you explain what happens inside the muscle fibers?', tip: 'Think about Part 6. Which two proteins slide past each other, and what do calcium and ATP do?',
               re: /actin|myosin|sarcomere|sliding filament|calcium|\batp\b/ },
             { done: 'You wrote at least 4 sentences.', q: 'Did you write 4 to 6 full sentences?', tip: 'Write one sentence for each of the four parts of the question.', sentences: 4 }
           ]
