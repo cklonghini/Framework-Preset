@@ -13,7 +13,7 @@
 window.ASSIGNMENT = {
   title: 'Skeletal Muscle Model',
   course: 'Anatomy & Physiology A',
-  storageKey: 'skeletal-muscle-model-v1',
+  storageKey: 'skeletal-muscle-model-v2',
   /* supported version (?support=eagle): the goal box at the top */
   essential: {
     question: 'How is a skeletal muscle built from smaller and smaller bundles, each one wrapped in its own layer?',
@@ -21,7 +21,7 @@ window.ASSIGNMENT = {
       'Put the parts of a muscle in order from smallest to largest: myofilaments, myofibril, muscle fiber, fascicle, muscle.',
       'Tell which layer wraps each bundle: endomysium, perimysium, and epimysium.',
       'Tell what each part of your straw model stands for in a real muscle.',
-      'Explain one way the model is like a real muscle and one way it is not.'
+      'Explain how the model is like a real muscle.'
     ]
   },
   partWord: 'Step',
@@ -75,10 +75,8 @@ window.ASSIGNMENT = {
           sign: true,
           items: [
             'I will build my own model and take my own photos.',
-            'I will keep the spaghetti dry and in the straws. It is a model, not a snack.',
             'I will follow the steps in order and add a photo at the end of each build step.',
-            'I will clean up my space when I finish.',
-            'I understand this is a real science lab, and I will take it seriously.'
+            'I will clean up my space when I finish.'
           ]
         },
         {
@@ -337,30 +335,6 @@ window.ASSIGNMENT = {
           items: ['Myofilaments', 'Myofibril', 'Muscle fiber', 'Fascicle', 'Muscle'],
           tip: 'Think about the order you built them. What did you start with, and what did you make last?',
           explain: 'Right. Myofilaments are bundled into a myofibril, myofibrils into a muscle fiber, muscle fibers into a fascicle, and fascicles into the muscle.'
-        },
-        {
-          type: 'selects',
-          text: 'Here is the diagram of a skeletal muscle with the labels covered. Choose the name for each number.',
-          easy: 'This is the muscle diagram. The labels are covered. Pick the name for each number.',
-          img: { src: 'media/label-muscle.jpg', alt: 'Drawing of a skeletal muscle taken apart into smaller and smaller pieces, from left to right, with 9 numbered labels. 1 and 2 point to the whole muscle and its outside. 3 and 4 point to a bundle and the layer around it. 5 and 6 point to the long tubes in the bundle and the layer around one tube. 7 points to a single long strand. 8 and 9 point to the two kinds of tiny threads coming out of its end.' },
-          options: ['Muscle', 'Epimysium', 'Fascicle', 'Perimysium', 'Muscle fibers', 'Endomysium', 'Myofibril', 'Actin', 'Myosin'],
-          items: [
-            { label: 'Number 1', answer: 'Muscle', hint: 'It points to the biggest piece on the far left. What did you make last?' },
-            { label: 'Number 2', answer: 'Epimysium', hint: 'It points to the outside of the biggest piece. Which layer is on the outside?' },
-            { label: 'Number 3', answer: 'Fascicle', hint: 'It points to a bundle inside the muscle. Compare with the diagram in Step 4.' },
-            { label: 'Number 4', answer: 'Perimysium', hint: 'It points to the layer around a bundle of muscle fibers.' },
-            { label: 'Number 5', answer: 'Muscle fibers', hint: 'It points to the long tubes inside the bundle. Compare with the diagram in Step 3.' },
-            { label: 'Number 6', answer: 'Endomysium', hint: 'It points to the thin layer around just one tube.' },
-            { label: 'Number 7', answer: 'Myofibril', hint: 'It points to one long strand. In your model, it was one straw.' },
-            { label: 'Number 8', answer: 'Actin', hint: 'This tiny thread is the thin filament. Compare with the diagram in Step 2.' },
-            { label: 'Number 9', answer: 'Myosin', hint: 'This is the other kind of tiny thread. Compare with the diagram in Step 2.' }
-          ]
-        },
-        {
-          type: 'mnemonic',
-          support: false,
-          text: 'Make your own memory trick for the three layers, from the outside in. Write a sentence where each word starts with the same letter as the layer.',
-          words: ['Epimysium', 'Perimysium', 'Endomysium']
         }
       ]
     },
@@ -370,11 +344,7 @@ window.ASSIGNMENT = {
       title: 'Reflection',
       intro: 'These are the reflection questions from your lab handout. Answer them in your own words, using what you built and what you saw in the video.',
       easyIntro: 'These questions are from your lab handout. Answer them in your own words. Use what you built and what you saw in the video.',
-      read: '<p><b>Think about it:</b> A model is never exactly like the real thing. As you compare your straw muscle to a real skeletal muscle, think about:</p><ul>'
-        + '<li><b>Organization:</b> How are the parts arranged? What is inside what?</li>'
-        + '<li><b>Size and number:</b> How big are the real parts? How many of each are in a real muscle?</li>'
-        + '<li><b>Materials:</b> What is a real muscle made of? What can a real muscle do that straws and tape cannot?</li>'
-        + '<li><b>Missing parts:</b> Look at the diagram again. Are there labels that are not in your model?</li></ul>',
+      read: '<p><b>Think about it:</b> As you compare your straw muscle to a real skeletal muscle, think about how the parts are arranged. What is inside what? Which layer wraps each bundle? What does each material in your model stand for?</p>',
       questions: [
         {
           type: 'highlight',
@@ -390,34 +360,6 @@ window.ASSIGNMENT = {
             { done: 'You told what a part of the model stands for.', q: 'Did you tell what a part of the model stands for?', tip: 'Connect a material to a real part: the straws, the spaghetti, or a color of tape.', all: [/straws?|spaghetti|pasta|noodles?|tape/, /represent|stands? for|shows?|is (a|an|the|like)|are (the|like)|acts? as|model of|myofibril|myofilament|fib(er|re)|fascicle|mysium/] },
             { done: 'You used transition words to point to your evidence.', q: 'Did you use transition words to point to your evidence?', tip: 'Introduce your evidence with words like “For example,” “According to the video,” or “In my model.”', writing: true, re: /for example|for instance|according to|this shows|that shows|which shows|shows that|in the video|the video (says|said|shows|showed|explains|explained)|such as|in my model|when i (built|made|wrapped|bundled)|this means|proves?|supports?/ },
             { done: 'You wrote at least 2 sentences.', q: 'Did you write at least 2 full sentences?', tip: 'Add another sentence.', sentences: 2 }
-          ]
-        },
-        {
-          type: 'written',
-          support: false,
-          text: 'How does this model lack effectiveness in its representation of the structure of a skeletal muscle? (2 to 4 sentences)',
-          easy: 'How is your model NOT like a real skeletal muscle? Give at least one way. Write 2 to 4 sentences.',
-          starters: ['One way the model is not like a real muscle is …', 'A real muscle is different because …', 'The model leaves out …'],
-          min: 40,
-          ideas: [
-            { done: 'You named a way the model is different from a real muscle.', q: 'Did you name a way the model is different?', tip: 'Read the “Think about it” list. Pick one: size, number, materials, or missing parts.', all: [/\bnot\b|n['’]t\b|different|unlike|instead|\black|missing|leaves? out|\bonly\b|\breal\b|actual/, /\bsize|small|tiny|microscop|thousands?|millions?|hundreds?|stiff|hollow|plastic|\btape|straws?|spaghetti|pasta|noodles?|contract|stretch|\bbend|\bflex|shorten|sarcomere|sarcoplasmic|nerves?|blood vessels?|tendons?|nucle|identical/] },
-            { done: 'You used the name of a real muscle part.', q: 'Did you use the name of a real muscle part?', tip: 'Name the part you are talking about, like myofibril, muscle fiber, or actin.', re: /myofibril|myofilament|muscle fib(er|re)|fascicle|actin|myosin|endomysium|perimysium|epimysium|sarcomere|sarcoplasmic/ },
-            { done: 'You explained what a real muscle is like.', q: 'Did you explain what the real muscle is like?', tip: 'Add a sentence that starts “In a real muscle, …”', all: [/real|actual|living|body|human/, /muscle|fib(er|re)|fascicle|myofibril|actin|myosin|mysium|cell/, /contract|move|stretch|shorten|pull|small|tiny|microscop|thousands?|millions?|hundreds?|many more|soft|tissue|alive|living|nerves?|blood|tendons?|bones?|thick|thin|sarcomere|sarcoplasmic|cover/] },
-            { done: 'You wrote at least 2 sentences.', q: 'Did you write 2 to 4 full sentences?', tip: 'Add another sentence.', sentences: 2 }
-          ]
-        },
-        {
-          type: 'written',
-          support: false,
-          text: 'Select one of the ways the model lacks effectiveness from your answer to the last question. Describe a specific way we could improve the model in the future to more accurately represent the structure of a skeletal muscle. (2 to 4 sentences)',
-          easy: 'Pick one way the model is not like a real muscle (from your last answer). How could we make the model better? Be specific. Write 2 to 4 sentences.',
-          starters: ['One problem with the model is …', 'To fix this, we could use …', 'This would be more like a real muscle because …'],
-          min: 40,
-          ideas: [
-            { done: 'You named the problem you want to fix.', q: 'Did you name the problem you want to fix?', tip: 'Start with the way the model is not like a real muscle from your last answer.', all: [/problem|\black|\bnot\b|n['’]t\b|different|missing|leaves? out|unlike|instead/, /size|small|big|number|many|stiff|hard|hollow|tape|straws?|spaghetti|pasta|contract|move|stretch|bend|sarcomere|sarcoplasmic|nerves?|blood|tendons?|same|color|actin|myosin|fib(er|re)|fascicle|myofibril|mysium/] },
-            { done: 'You described a specific change.', q: 'Did you describe a specific change?', tip: 'Name a new material or a new step. What would you use or do?', all: [/\b(use|add|replace|swap|instead|change|make|switch|try|build|wrap|put)/, /rubber|elastic|\bbands?\b|string|yarn|thread|cloth|fabric|plastic wrap|\bclay\b|play.?doh|sponge|foam|noodles?|\bthin(ner)?\b|\bthick(er)?\b|smaller|colou?rs?\b|labels?\b|\bwire|pipe cleaners?|balloons?|\bgel\b|jelly|paper|tubes?|straws?|spaghetti|pasta|\btape/] },
-            { done: 'You explained why the change makes the model more accurate.', q: 'Did you explain why the change helps?', tip: 'Add a sentence that says how the change would be more like a real muscle.', all: [/because|so (that|it)|this (would|will)|which (would|will)|that way|more (like|accurate|real)|closer|better (show|represent)|show|represent/, /fib(er|re)|fascicle|myofibril|actin|myosin|mysium|contract|stretch|\bmov(e|es|ing)\b|tissue|layers?|bundl|\bsize|smaller|\bcover|shorten|\bflex|\bbend/] },
-            { done: 'You wrote at least 2 sentences.', q: 'Did you write 2 to 4 full sentences?', tip: 'Add another sentence.', sentences: 2 }
           ]
         },
         {
