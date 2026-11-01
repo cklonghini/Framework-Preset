@@ -20,7 +20,7 @@
 window.ASSIGNMENT = {
   title: 'Explore - Joint Classification and Movement',
   course: 'Anatomy & Physiology A',
-  storageKey: 'explore-joint-classification-and-movement-v1',
+  storageKey: 'explore-joint-classification-and-movement-v2',
   short: 'joints-and-movement',             // short link: SITE/joints-and-movement
 
   /* supported version (?support=eagle): the goal box at the top */
@@ -111,20 +111,6 @@ window.ASSIGNMENT = {
           tip: 'Axial means along the middle line (axis) of the body. Listen near the start of the first clip for the 80 midline bones.'
         },
         {
-          type: 'choice',
-          text: 'What is the difference between the structural and the functional classification of a joint?',
-          easy: 'What is the difference between sorting joints by structure and sorting them by function?',
-          options: [
-            'Structural is about what material binds the bones together. Functional is about how much the joint can move.',
-            'Structural is about how much the joint can move. Functional is about what material binds the bones together.',
-            'Structural is about where the joint is in the body. Functional is about how big the joint is.',
-            'They are two names for the same thing.'
-          ],
-          answer: 0,
-          explain: 'Right. Structure asks what holds the bones together (fibrous tissue, cartilage, or a fluid-filled cavity). Function asks how much the joint can move.',
-          tip: 'Listen to the second clip, where the video says joints are classified “by what they’re made of, and by what they do.” Which classification goes with each half?'
-        },
-        {
           type: 'selects',
           text: 'Pick the structural type for each joint. Use the diagram and the reading.',
           easy: 'What holds each joint together? Pick its structural type.',
@@ -172,13 +158,6 @@ window.ASSIGNMENT = {
           tip: 'What does grease do on a hinge? Listen near the end of the second clip for what the video says running would do without it.'
         },
         {
-          type: 'mnemonic',
-          support: false,
-          text: 'Make your own memory trick for the functional types, in order from the least movement to the most: S (synarthrosis), A (amphiarthrosis), D (diarthrosis). Write a short sentence where each word starts with one of those letters, in order.',
-          easy: 'Make a memory trick. Write 3 words that start with S, A, and D, in that order. S is synarthrosis (no movement), A is amphiarthrosis (a little movement), and D is diarthrosis (free movement).',
-          words: ['Synarthrosis', 'Amphiarthrosis', 'Diarthrosis']
-        },
-        {
           type: 'written',
           support: false,
           text: 'A joint is classified as a synarthrosis (immovable). Is a person’s total lack of movement at that joint a sign of injury, or is it normal? Explain your reasoning, give an example of this kind of joint, and name its structural type. (2 to 4 sentences)',
@@ -196,7 +175,7 @@ window.ASSIGNMENT = {
               tip: 'The video and the reading each give an example. One is in your head, and one holds your teeth.',
               re: /skull|cranium|cranial|suture|\bteeth\b|\btooth\b|gomphos/ },
             { done: 'You named the structural type.', q: 'Did you name the structural type of your example?',
-              tip: 'Look at Question 3. What material ties skull bones together?',
+              tip: 'Look back at the structural type you picked for skull sutures. What material ties skull bones together?',
               re: /fibrous|fibre|fiber/ },
             { done: 'You wrote at least 2 sentences.', q: 'Did you write 2 to 4 full sentences?', tip: 'Add a sentence that explains your reasoning.', sentences: 2 }
           ]
@@ -279,31 +258,15 @@ window.ASSIGNMENT = {
         },
         {
           type: 'selects',
-          text: 'Match each synovial joint type to an example in the body.',
+          text: 'Match each of these synovial joint types to an example in the body.',
           easy: 'Where in the body is each joint type? Match each one to an example.',
-          options: ['Elbow, knee', 'Atlas/axis (neck), proximal radius-ulna', 'Shoulder, hip', 'Thumb (carpometacarpal joint)', 'Wrist (radiocarpal joint), knuckles', 'Between carpal bones, between tarsal bones'],
+          options: ['Elbow, knee', 'Atlas/axis (neck), proximal radius-ulna', 'Shoulder, hip', 'Thumb (carpometacarpal joint)'],
           items: [
             { label: 'Hinge', answer: 'Elbow, knee', hint: 'Which joints bend only one way, like when the video bends an arm or kicks a leg?' },
             { label: 'Pivot', answer: 'Atlas/axis (neck), proximal radius-ulna', hint: 'Which joints let you shake your head “no” and turn your palm over?' },
             { label: 'Ball-and-socket', answer: 'Shoulder, hip', hint: 'The video says these joints are the ones people dislocate and replace.' },
-            { label: 'Saddle', answer: 'Thumb (carpometacarpal joint)', hint: 'The video says this joint makes something “opposable.”' },
-            { label: 'Condyloid (ellipsoid)', answer: 'Wrist (radiocarpal joint), knuckles', hint: 'The video calls them “condylar knuckle joints.” The reading gives a second example.' },
-            { label: 'Plane (gliding)', answer: 'Between carpal bones, between tarsal bones', hint: 'These joints sit among many small bones that slide against each other in the wrist and ankle.' }
+            { label: 'Saddle', answer: 'Thumb (carpometacarpal joint)', hint: 'The video says this joint makes something “opposable.”' }
           ]
-        },
-        {
-          type: 'choice',
-          text: 'According to the video, what is the trade-off of a very flexible joint?',
-          easy: 'The video says very flexible joints have a downside. What is it?',
-          options: [
-            'The more flexible a joint is, the more unstable and fragile it is.',
-            'The more flexible a joint is, the stronger and more stable it is.',
-            'A flexible joint can only move in one plane.',
-            'Flexible joints do not need synovial fluid.'
-          ],
-          answer: 0,
-          explain: 'Right. The video says “the more flexible a joint is, the more unstable and fragile it is,” which is one reason we see so many dislocated shoulders and hip replacements.',
-          tip: 'Listen near the end of the first clip, where the video talks about the hip and shoulder joints.'
         },
         {
           type: 'highlight',
@@ -404,32 +367,6 @@ window.ASSIGNMENT = {
           ]
         },
         {
-          type: 'selects',
-          support: false,
-          text: 'Name the movement in each everyday action.',
-          easy: 'What is the movement word for each action?',
-          options: ['Flexion', 'Extension', 'Abduction', 'Adduction', 'Rotation', 'Pronation', 'Supination', 'Plantar flexion', 'Elevation', 'Retraction'],
-          items: [
-            { label: 'Nodding your head down so your chin moves toward your chest', answer: 'Flexion', hint: 'Does the angle between your head and your chest get smaller or bigger?' },
-            { label: 'Straightening your knee to kick a soccer ball', answer: 'Extension', hint: 'The angle at your knee opens up.' },
-            { label: 'Lifting your leg out to the side, like the person in the movement video', answer: 'Abduction', hint: 'Is your leg moving toward the midline or away from it?' },
-            { label: 'Bringing your arms back down to your sides after a jumping jack', answer: 'Adduction', hint: 'Is your arm moving toward the midline or away from it?' },
-            { label: 'Turning your hand palm-down to use a computer mouse', answer: 'Pronation', hint: 'Which word means palms down?' },
-            { label: 'Pointing your toes like a ballet dancer', answer: 'Plantar flexion', hint: 'Your toes point down, away from your shin.' },
-            { label: 'Shrugging your shoulders up toward your ears', answer: 'Elevation', hint: 'Watch the end of the second clip. Which word means moving up?' },
-            { label: 'Squeezing your shoulder blades back, like standing at attention', answer: 'Retraction', hint: 'Watch the end of the second clip. Which word means pulling the shoulders back?' }
-          ]
-        },
-        {
-          type: 'choice',
-          text: 'In the joints clip, which joint lets you turn your palm forward (supination) and backward (pronation)?',
-          easy: 'Which joint lets you turn your palm up and down?',
-          options: ['The pivot joint between the radius and ulna', 'The saddle joint of the thumb', 'The hinge joint of the knee', 'The ball-and-socket joint of the hip'],
-          answer: 0,
-          explain: 'Right. The pivot joint between your radius and ulna lets you rotate your palm forward (supination) and backward (pronation).',
-          tip: 'Watch the third clip again. The video names the joint and the two forearm bones it sits between.'
-        },
-        {
           type: 'written',
           support: false,
           text: 'Imagine an accident causes the lower (distal) ends of the radius and ulna to fuse together, turning that joint into a synarthrosis. Which specific movements would the person lose, and why? Give an everyday task they would have trouble with. (2 to 4 sentences)',
@@ -472,8 +409,7 @@ window.ASSIGNMENT = {
           items: [
             { label: 'Found in the walls of hollow organs like the stomach, airways, and blood vessels', answer: 'Smooth', hint: 'Listen to the first type of muscle tissue the video describes.' },
             { label: 'Found only in the heart; striated and involuntary', answer: 'Cardiac', hint: 'The video says the heart is so important that it gets its very own type.' },
-            { label: 'About 640 of them; mostly voluntary; most attach to bones', answer: 'Skeletal', hint: 'Which type pulls on your skeleton?' },
-            { label: 'Pushes fluid and other material along by contracting and relaxing over and over', answer: 'Smooth', hint: 'Which type lines the hollow organs that move material through your body?' }
+            { label: 'About 640 of them; mostly voluntary; most attach to bones', answer: 'Skeletal', hint: 'Which type pulls on your skeleton?' }
           ]
         },
         {
@@ -518,22 +454,6 @@ window.ASSIGNMENT = {
           answer: 0,
           explain: 'Right. The video calls muscles “voracious energy hogs.” A nerve tells each one to contract, and an artery and vein keep it supplied with blood, oxygen, and nutrients.',
           tip: 'Listen to what the video calls muscles near the end of the first clip. What does a nerve do, and what does blood bring?'
-        },
-        {
-          type: 'written',
-          support: false,
-          text: 'The video says a skeletal muscle “is constructed like a really sturdy piece of rope.” Explain how a muscle is like a rope. Use at least three of the parts from the reading. (2 to 4 sentences)',
-          easy: 'The video says a muscle is built like a strong rope. How is a muscle like a rope? Use at least 3 muscle parts from the reading. (2 to 4 sentences)',
-          starters: ['A rope is made of small threads twisted into bigger strands. In a muscle, …', 'These form bundles called …', 'This bundles-of-bundles design makes the muscle …'],
-          min: 40,
-          ideas: [
-            { done: 'You named the smallest threads.', q: 'Did you name the tiny threads inside a muscle fiber?', tip: 'What are the tiny parallel threads called?', re: /myofibril/ },
-            { done: 'You named the muscle fibers (cells).', q: 'Did you name the muscle fibers?', tip: 'What do the tiny threads squish together to form?', re: /muscle fib(er|re)s?|muscle cells?/ },
-            { done: 'You named the fascicles.', q: 'Did you name the bundles of fibers?', tip: 'The video calls the string-like bundles of fibers a special name.', re: /fascic/ },
-            { done: 'You explained why the design is useful.', q: 'Did you say why bundles of bundles help?', tip: 'What does the video say this design makes muscle tissue?',
-              re: /sturdy|strong|tough|durab|not (break|burst|snap|tear)|hold up|protect|burst/ },
-            { done: 'You wrote at least 2 sentences.', q: 'Did you write 2 to 4 full sentences?', tip: 'Add a sentence that connects the rope to the muscle.', sentences: 2 }
-          ]
         }
       ]
     },
@@ -619,32 +539,6 @@ window.ASSIGNMENT = {
           answer: 0,
           explain: 'Right. The calcium pumps restock the sarcoplasmic reticulum. When calcium unbinds from troponin, the shape change puts tropomyosin back in place, so myosin cannot bind.',
           tip: 'Listen near the end of the third clip. What are the calcium pumps doing “meanwhile”?'
-        },
-        {
-          type: 'highlight',
-          support: false,
-          text: 'Explain how calcium and ATP work together to make a muscle fiber contract. Use evidence from the video, along with transition words that bring attention to your evidence. (3 to 5 sentences)',
-          easy: 'How do calcium and ATP make a muscle fiber contract? Use evidence (facts) from the video. Start your evidence with transition words, like “According to the video, …” (3 to 5 sentences)',
-          starters: ['According to the video, when the action potential reaches the sarcoplasmic reticulum, …', 'The calcium binds to …, which …', 'Before myosin can pull, ATP …', 'This shows that …'],
-          min: 80,
-          ideas: [
-            { done: 'You said where the calcium comes from.', q: 'Did you say where the calcium comes from?',
-              tip: 'Which part of the muscle cell stores calcium?',
-              all: [/calcium/, /sarcoplasmic|reticulum|\bsr\b|stor|released?|rush/] },
-            { done: 'You explained what calcium does.', q: 'Did you explain what calcium does once it is released?',
-              tip: 'Calcium binds to one bodyguard protein. What does that protein do to the other one?',
-              all: [/calcium/, /troponin|tropomyosin|bodyguard|binding sites?|uncover|expose/] },
-            { done: 'You explained how ATP powers the pull.', q: 'Did you explain what ATP does for the myosin head?',
-              tip: 'Before myosin binds, it breaks down ATP. What does that do to the myosin head?',
-              all: [/\batp\b|\badp\b/, /energy|cock|spring|stretch|armed|extended|power|let go|lets go|releas|unbind|detach/] },
-            { done: 'You explained how the sarcomere gets shorter.', q: 'Did you explain what happens when myosin pulls on actin?',
-              tip: 'What happens to the sarcomere and its Z lines when myosin pulls?',
-              re: /sarcomere|z.?lines?|shorten|slide|sliding|contract/ },
-            { done: 'You wrote at least 3 sentences.', q: 'Did you write 3 to 5 full sentences?', tip: 'Add a sentence that explains the next step.', sentences: 3 },
-            { done: 'You used transition words to point to your evidence.', q: 'Did you use transition words to point to your evidence?', tip: 'Introduce your evidence with words like “According to the video,” or “The video explains that.”',
-              writing: true, re: /for example|for instance|according to|this shows|that shows|which shows|shows that|evidence|in the video|the video (says|said|shows|showed|explains|explained|mentions|mentioned)|because|such as|as an example|one example|proves?|this means|supports?/ },
-            { done: 'You highlighted your transition words in yellow.', q: 'Did you highlight your transition words in yellow?', tip: 'Go back and select the transition words that point to your evidence, then press the yellow button.', highlight: true }
-          ]
         }
       ]
     },
@@ -692,16 +586,8 @@ window.ASSIGNMENT = {
             + '<p>Labels on the drawings: biceps brachii, triceps brachii, brachialis, pronator teres, brachioradialis, extensor carpi radialis longus, flexor carpi radialis, palmaris longus, flexor carpi ulnaris.</p>'
         }
       ],
-      read: '<p><b>Read:</b> Muscle names are often Latin. These word parts help you decode the names in Question 1 and Question 2.</p><ul>'
-        + '<li><b>Quadriceps</b> femoris: <i>quadri</i> = four, <i>ceps</i> = heads; <i>femoris</i> = by the femur.</li>'
-        + '<li><b>Brachioradialis</b>: <i>brachio</i> = arm, <i>radialis</i> = along the radius. It lies in the forearm, along the radius.</li>'
-        + '<li><b>Trapezius</b>: shaped like a trapezoid (a flat, four-sided shape).</li>'
-        + '<li><b>Vastus lateralis</b>: <i>vastus</i> = huge; <i>lateralis</i> = on the side. It is a huge muscle on the outer side of the thigh.</li>'
-        + '<li><b>Rectus abdominis</b>: <i>rectus</i> = straight (parallel); <i>abdominis</i> = of the abdomen.</li>'
-        + '<li><b>Flexor carpi radialis</b>: <i>carpi</i> = the carpal (wrist) bones; <i>radialis</i> = the radius. It runs from the elbow end of the arm down to the wrist, on the radius side.</li>'
-        + '<li><b>Depressor labii inferioris</b>: <i>depressor</i> = pulls down; <i>labii inferioris</i> = the lower lip. It pulls your lower lip down to pout.</li>'
-        + '<li><b>Sternocleidomastoid</b>: <i>sterno</i> = sternum, <i>cleido</i> = clavicle, <i>mastoid</i> = mastoid process of the skull.</li></ul>'
-        + '<p><b>Muscles work in teams.</b> A <b>prime mover</b> is the main muscle for a movement. A <b>synergist</b> helps the prime mover. An <b>antagonist</b> does the opposite movement, like the latissimus dorsi (extension of the arm) against the pectoralis major (flexion of the arm).</p>',
+      read: '<p><b>Read:</b> Muscles work in teams.</p>'
+        + '<p>A <b>prime mover</b> is the main muscle for a movement. A <b>synergist</b> helps the prime mover. An <b>antagonist</b> does the opposite movement, like the latissimus dorsi (extension of the arm) against the pectoralis major (flexion of the arm).</p>',
       questions: [
         {
           type: 'choice',
@@ -711,22 +597,6 @@ window.ASSIGNMENT = {
           answer: 0,
           explain: 'Right. Quadri means four and ceps means heads, so the quadriceps have four heads, each attached at a different origin. It works like biceps (two heads) and triceps (three heads).',
           tip: 'Compare the name to the biceps and triceps on Station 1. What do “bi,” “tri,” and “quadri” count?'
-        },
-        {
-          type: 'selects',
-          support: false,
-          text: 'Using muscles NOT used as examples on the Station 1 card: which muscle is named for each pattern? Use the word parts in the reading.',
-          easy: 'Each muscle name follows one pattern from Station 1. Which muscle goes with each pattern? Use the word parts in the reading.',
-          options: ['Brachioradialis', 'Trapezius', 'Vastus lateralis', 'Rectus abdominis', 'Quadriceps femoris', 'Flexor carpi radialis', 'Depressor labii inferioris', 'Sternocleidomastoid'],
-          items: [
-            { label: 'Named for its LOCATION', answer: 'Brachioradialis', hint: 'Look for a name that tells where the muscle lies: in the arm, along one forearm bone.' },
-            { label: 'Named for its SHAPE', answer: 'Trapezius', hint: 'Which name sounds like a geometry shape?' },
-            { label: 'Named for its SIZE', answer: 'Vastus lateralis', hint: 'Find the word part in the reading that means “huge.”' },
-            { label: 'Named for the DIRECTION its fibers run', answer: 'Rectus abdominis', hint: 'Station 1 gives three direction words. Which one shows up in these names?' },
-            { label: 'Named for its NUMBER OF ORIGINS', answer: 'Quadriceps femoris', hint: 'Look back at Question 1.' },
-            { label: 'Named for the LOCATION OF ITS ATTACHMENTS', answer: 'Flexor carpi radialis', hint: 'Station 1’s example of this pattern is on the card, so it is not the answer. Look for the other name that tells which bones the muscle runs between.' },
-            { label: 'Named for its ACTION', answer: 'Depressor labii inferioris', hint: 'Which name starts with a word that tells what the muscle does, and to what body part?' }
-          ]
         },
         {
           type: 'selects',
@@ -771,16 +641,6 @@ window.ASSIGNMENT = {
           answer: 0,
           explain: 'Right. The triceps brachii is the main muscle for extension. It is the antagonist of the biceps brachii.',
           tip: 'Read the last paragraph of Station 3.'
-        },
-        {
-          type: 'choice',
-          support: false,
-          text: 'Station 3 says the flexor carpi ulnaris flexes and adducts your hand. The flexor carpi radialis flexes your hand and does the opposite side-to-side movement. What is it?',
-          easy: 'The flexor carpi ulnaris moves your hand toward the midline (adducts). The flexor carpi radialis moves it the opposite way. What is that movement called?',
-          options: ['Abduction', 'Rotation', 'Supination', 'Dorsiflexion'],
-          answer: 0,
-          explain: 'Right. The flexor carpi radialis flexes and abducts the hand. Station 3 colors the “ad” and “ab” to help you see the difference.',
-          tip: 'Which movement word from Part 3 is the opposite of adduction?'
         }
       ]
     },
@@ -845,16 +705,6 @@ window.ASSIGNMENT = {
             { label: 'Hamstrings are located', options: ['Posterior (back) of the thigh', 'Anterior (front) of the thigh', 'Lateral (outer) thigh', 'Medial (inner) thigh'], answer: 'Posterior (back) of the thigh',
               hint: 'Find “hamstrings” on Station 4. Which view of the leg shows them?' }
           ]
-        },
-        {
-          type: 'choice',
-          support: false,
-          text: 'Station 4 says the tibialis anterior is the prime mover in which movement from Part 3?',
-          easy: 'The tibialis anterior is the main muscle for which movement?',
-          options: ['Dorsiflexion', 'Plantar flexion', 'Abduction', 'Rotation'],
-          answer: 0,
-          explain: 'Right. The tibialis anterior is the prime mover in dorsiflexion: it pulls your foot up toward your shin, like walking on your heels.',
-          tip: 'Read the last sentence of Station 4. The foot moves toward the knee.'
         },
         {
           type: 'choice',
