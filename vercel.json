@@ -41,6 +41,26 @@
       "permanent": false
     },
     {
+      "source": "/joints-and-movement",
+      "destination": "/assignments/explore-joint-classification-and-movement/",
+      "permanent": false
+    },
+    {
+      "source": "/joints-and-movement/",
+      "destination": "/assignments/explore-joint-classification-and-movement/",
+      "permanent": false
+    },
+    {
+      "source": "/explore-joint-classification-and-movement",
+      "destination": "/assignments/explore-joint-classification-and-movement/",
+      "permanent": false
+    },
+    {
+      "source": "/explore-joint-classification-and-movement/",
+      "destination": "/assignments/explore-joint-classification-and-movement/",
+      "permanent": false
+    },
+    {
       "source": "/skeletal-system",
       "destination": "/assignments/explore-more-skeletal-system/",
       "permanent": false
